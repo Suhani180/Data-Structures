@@ -95,31 +95,9 @@ This repository is dedicated to learning and mastering Data Structures through h
 
 ---
 
-## 📈 Progress
-
-| Topic | Status |
-|--------|--------|
-| Arrays | ⏳ |
-| Strings | ⏳ |
-| Linked Lists | ⏳ |
-| Stacks | ⏳ |
-| Queues | ⏳ |
-| Trees | ⏳ |
-| Heaps | ⏳ |
-| Hashing | ⏳ |
-| Graphs | ⏳ |
-| Tries | ⏳ |
-| Advanced Data Structures | ⏳ |
-
----
-
 ## ⭐ Resources
 
 - LeetCode
-- GeeksforGeeks
-- HackerRank
-- Codeforces
-- CSES Problem Set
 
 ---
 
