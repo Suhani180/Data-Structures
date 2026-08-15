@@ -1,27 +1,21 @@
 class Solution {
 public:
 
-    void generate(vector<int>& nums, vector<bool>& used, vector<int>& current, vector<vector<int>>& answer){
-        if(current.size() == nums.size()){
-            answer.push_back(current);
+    void solve(vector<int>& nums, int index, vector<vector<int>>& answer){
+        if(index == nums.size()){
+            answer.push_back(nums);
             return;
         }
-        for(int i =0; i< nums.size(); i++){
-            if(used[i])
-                continue;
-            used[i] = true;
-            current.push_back(nums[i]);
-            generate(nums, used, current, answer);
-            current.pop_back();
-            used[i] =false;
+        for(int i =index; i < nums.size(); i++){
+            swap(nums[index], nums[i]);
+            solve(nums, index+1, answer);
+            swap(nums[index], nums[i]);
         }
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> answer;
-        vector<int> current;
-        vector<bool> used(nums.size(), false);
-        generate(nums, used, current, answer);
+        solve(nums, 0, answer);
         return answer;
     }
 };
