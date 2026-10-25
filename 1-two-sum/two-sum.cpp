@@ -1,24 +1,13 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int n = nums.size();
-        vector<pair<int, int>> arr;
-        for(int i =0; i<n; i++){
-            arr.push_back({nums[i], i});
-        }
-        sort(arr.begin(), arr.end());
-        int left =0, right = n-1;
-        while(left<right){
-            long long sum = (long long)arr[left].first + arr[right].first;
-            if(sum == target){
-                return {arr[left].second, arr[right].second};
+        unordered_map<int, int> mp;
+        for(int i =0; i<nums.size(); i++){
+            int complement = target - nums[i];
+            if(mp.find(complement) != mp.end()){
+                return {mp[complement], i};
             }
-            else if(sum <target){
-                left++;
-            }
-            else{
-                right--;
-            }
+            mp[nums[i]] = i;
         }
         return {};
     }
